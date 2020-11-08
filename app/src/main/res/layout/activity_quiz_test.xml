@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="data"
+            type="com.hemanth.winuhall.data.model.QuizQuestionResponse.Data" />
+
+        <variable
+            name="viewModel"
+            type="com.hemanth.winuhall.ui.quizTest.QuizTestViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.quizTest.QuizTestActivity">
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvQuizTimer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/tenDp"
+            android:text="179 min:24 sec"
+            android:textColor="@color/appColor"
+            android:textSize="@dimen/fontFourteen"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvQuizFinish"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/tenDp"
+            android:fontFamily="@font/product_sans_bold"
+            android:padding="@dimen/tenDp"
+            android:text="@string/finish"
+            android:textAllCaps="true"
+            android:textColor="@color/appColor"
+            android:textSize="@dimen/fontFourteen"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/oneDp"
+            android:layout_marginTop="@dimen/fiveDp"
+            android:background="@color/viewLine"
+            app:layout_constraintTop_toBottomOf="@id/tvQuizFinish" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/zeroDp"
+            app:layout_constraintBottom_toTopOf="@id/btnNext"
+            app:layout_constraintTop_toBottomOf="@id/view">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvQuizType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/tenDp"
+                    android:layout_marginTop="@dimen/twentyDp"
+                    android:fontFamily="@font/product_sans_bold"
+                    android:text="@{data.questionType}"
+                    android:textColor="@color/textColorBlack"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvQuizQuestionNo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/tenDp"
+                    android:layout_marginTop="@dimen/tenDp"
+                    android:fontFamily="@font/product_sans_bold"
+                    android:text="@{viewModel.index+` `}"
+                    android:textColor="@color/appColor"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvQuizType" />
+
+                <WebView
+                    android:id="@+id/tvQuizQuestion"
+                    htmlString="@{data.body}"
+                    android:layout_width="@dimen/zeroDp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/tenDp"
+                    android:layout_marginTop="@dimen/tenDp"
+                    android:layout_marginEnd="@dimen/tenDp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/tvQuizQuestionNo"
+                    app:layout_constraintTop_toBottomOf="@id/tvQuizType" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvQuizChooseTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/tenDp"
+                    android:fontFamily="@font/product_sans_bold"
+                    android:text="@string/choose_an_option"
+                    android:textColor="@color/textColorBlack"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvQuizQuestion" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/twentyDp"
+                    android:orientation="vertical"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintTop_toBottomOf="@id/tvQuizChooseTitle" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnPrevious"
+            android:layout_width="@dimen/zeroDp"
+            android:layout_height="wrap_content"
+            android:background="@color/appColor"
+            android:text="@string/previous"
+            android:textAllCaps="false"
+            android:textColor="@color/textColorWhite"
+            android:visibility="@{viewModel.index>1?View.VISIBLE:View.GONE}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btnNext"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnNext"
+            android:layout_width="@dimen/zeroDp"
+            android:layout_height="wrap_content"
+            android:background="@color/textColorMidBlack"
+            android:text="@string/next"
+            android:textAllCaps="false"
+            android:textColor="@color/textColorWhite"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btnPrevious" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/twentyDp"
+            android:layout_marginEnd="@dimen/tenDp"
+            android:drawableStart="@drawable/ic_no_internet"
+            android:drawablePadding="@dimen/tenDp"
+            android:gravity="center"
+            android:text="@string/internet_disconnected"
+            android:textColor="@android:color/holo_red_light"
+            android:textSize="@dimen/fontTen"
+            android:textStyle="italic"
+            android:visibility="@{viewModel.internetAvailable?View.GONE:View.VISIBLE}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/view" />
+
+        <include
+            android:id="@+id/includeProgress"
+            layout="@layout/loading_progress"
+            android:visibility="visible"
+            app:viewModel="@{viewModel}" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

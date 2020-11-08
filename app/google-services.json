@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "65037421065",
+    "firebase_url": "https://winuall-quiz.firebaseio.com",
+    "project_id": "winuall-quiz",
+    "storage_bucket": "winuall-quiz.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:65037421065:android:e233d2bfd6aa475a0b06d8",
+        "android_client_info": {
+          "package_name": "com.hemanth.winuhall"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "65037421065-bk65odbn426l8a0iclrvnivifeu3ukbi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hemanth.winuhall",
+            "certificate_hash": "ca1b8f4d000bea83da003b5472807f919a425007"
+          }
+        },
+        {
+          "client_id": "65037421065-e5piq68ifveln82g4a7i7cid58o8vkj5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDo8QXtMBaL1zIwNCYJ6UklbJ4ITHC9EeU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "65037421065-e5piq68ifveln82g4a7i7cid58o8vkj5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

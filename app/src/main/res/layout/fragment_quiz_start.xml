@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="quiz"
+            type="com.hemanth.winuhall.data.model.QuizQuestionResponse.Quiz" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:clickable="true"
+            android:focusable="true"
+            tools:context=".ui.quizTest.quizStartScreen.QuizStartFragment">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivQuizStartBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/fifteenDp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_round_close" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvQuizStartTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/twentyDp"
+                android:fontFamily="@font/product_sans_bold"
+                android:text="@{quiz.name}"
+                android:textColor="@color/textColorMidBlack"
+                android:textSize="@dimen/fontSixteen"
+                app:layout_constraintBottom_toTopOf="@id/tvQuizDuration"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvQuizDuration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/twentyDp"
+                android:text='@{quiz.duration + ` min`}'
+                android:textColor="@color/textColorLightBlack"
+                android:textSize="@dimen/fontTwelve"
+                app:layout_constraintBottom_toTopOf="@id/cbQuiz"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <CheckBox
+                android:id="@+id/cbQuiz"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/twentyDp"
+                android:paddingStart="@dimen/twentyDp"
+                android:text="@string/test_t_n_c_msg"
+                android:textColor="@color/textColorLightBlack"
+                app:layout_constraintBottom_toTopOf="@id/btnQuizStart"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <Button
+                android:id="@+id/btnQuizStart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/twentyDp"
+                android:drawableEnd="@drawable/ic_arrow_forward_white"
+                android:paddingStart="@dimen/fiftyDp"
+                android:paddingEnd="@dimen/fiftyDp"
+                android:text="@string/start_test"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias=".6" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </RelativeLayout>
+</layout>

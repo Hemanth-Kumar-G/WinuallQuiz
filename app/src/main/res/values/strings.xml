@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">Winuall Quiz</string>
+    <string name="finish">Finish</string>
+    <string name="choose_an_option">Choose an option</string>
+    <string name="previous">Previous</string>
+    <string name="next">Next</string>
+
+    <string-array name="home_tab_titles">
+        <item>Ongoing</item>
+        <item>Oncoming</item>
+        <item>completed</item>
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="start_test">start test</string>
+    <string name="test_t_n_c_msg">I accept all the terms and instructions.</string>
+    <string name="finished">Finished</string>
+    <string name="analysis">Analysis</string>
+    <string name="correctly_answered_questions">Correctly Answered Questions</string>
+    <string name="wrong_answered_questions">Wrong Answered Questions</string>
+    <string name="response_time">Response Time</string>
+    <string name="questions_attempted">Questions Attempted</string>
+    <string name="total_score">Total Score</string>
+    <string name="finish_quiz_msg">Are you sure you want to FINISH quiz ?</string>
+    <string name="yes">YES</string>
+    <string name="no">NO</string>
+    <string name="internet_disconnected">INTERNET DISCONNECTED</string>
+    <string name="ok">ok</string>
+    <string name="retry">Retry</string>
+    <string name="no_internet_error">No Internet Connection</string>
+    <string name="empty">Empty</string>
+    <string name="min"> \ min</string>
+
+</resources>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.hemanth.winuhall.data.model.QuizQuestionResponse.Data.Option" />
+
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/fiveDp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <WebView
+                android:id="@+id/tvQuizOption"
+                htmlString="@{data.value}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/tenDp"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/viewClick"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/zeroDp"
+                android:background="@{data.isSelected ? @color/appColorTransparent : @color/transparent}"
+                app:layout_constraintBottom_toBottomOf="@id/tvQuizOption"
+                app:layout_constraintTop_toTopOf="@id/tvQuizOption" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.cardview.widget.CardView>
+</layout>

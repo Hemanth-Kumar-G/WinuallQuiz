@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="twentyDp">20dp</dimen>
+    <dimen name="fontTen">10sp</dimen>
+    <dimen name="fontTwelve">12sp</dimen>
+    <dimen name="fontFourteen">14sp</dimen>
+    <dimen name="tenDp">10dp</dimen>
+    <dimen name="fiveDp">5dp</dimen>
+    <dimen name="fifteenDp">15dp</dimen>
+    <dimen name="oneDp">1dp</dimen>
+    <dimen name="zeroDp">0dp</dimen>
+    <dimen name="fiftyDp">50dp</dimen>
+    <dimen name="fontTwenty">20sp</dimen>
+    <dimen name="fontSixteen">16sp</dimen>
+</resources>

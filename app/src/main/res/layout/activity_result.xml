@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="result"
+            type="com.hemanth.winuhall.data.model.ResultResponse" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.result.ResultActivity">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivResultBack"
+            onBackClick="@{true}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/tenDp"
+            android:padding="@dimen/tenDp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_arrow_back_ios" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvResultTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/product_sans_bold"
+            android:padding="@dimen/tenDp"
+            android:text="@string/analysis"
+            android:textColor="@color/appColor"
+            android:textSize="@dimen/fontSixteen"
+            app:layout_constraintBottom_toBottomOf="@id/ivResultBack"
+            app:layout_constraintStart_toEndOf="@id/ivResultBack"
+            app:layout_constraintTop_toTopOf="@id/ivResultBack" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvResultCorrectAns"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/fifteenDp"
+            app:layout_constraintTop_toBottomOf="@id/ivResultBack">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:fontFamily="@font/product_sans_regular"
+                android:gravity="start"
+                android:padding="@dimen/fifteenDp"
+                android:text="@string/correctly_answered_questions"
+                android:textColor="@color/textColorMidBlack" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvResultCorrectAns"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end|center_vertical"
+                android:layout_margin="@dimen/fifteenDp"
+                android:fontFamily="@font/product_sans_bold"
+                android:text="@{String.valueOf(result.correctAnswered)}"
+                android:textColor="@color/green"
+                tools:text="12" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvResultWrongAns"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/fifteenDp"
+            app:layout_constraintTop_toBottomOf="@id/cvResultCorrectAns">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:fontFamily="@font/product_sans_regular"
+                android:gravity="start"
+                android:padding="@dimen/fifteenDp"
+                android:text="@string/wrong_answered_questions"
+                android:textColor="@color/textColorMidBlack" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvResultWrongAns"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end|center_vertical"
+                android:layout_margin="@dimen/fifteenDp"
+                android:fontFamily="@font/product_sans_regular"
+                android:text="@{String.valueOf(result.wrongAnswered)}"
+                android:textColor="@android:color/holo_red_dark"
+                tools:text="2" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvResultResponseTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/fifteenDp"
+            app:layout_constraintTop_toBottomOf="@id/cvResultWrongAns">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:fontFamily="@font/product_sans_regular"
+                android:gravity="start"
+                android:padding="@dimen/fifteenDp"
+                android:text="@string/response_time"
+                android:textColor="@color/textColorMidBlack" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvResultResponseTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end|center_vertical"
+                android:layout_margin="@dimen/fifteenDp"
+                android:fontFamily="@font/product_sans_bold"
+                android:text="@{result.wrongAnswered+``}"
+                android:textColor="@android:color/holo_green_dark"
+                tools:text="2" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvResultQuesAttempted"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/fifteenDp"
+            app:layout_constraintTop_toBottomOf="@id/cvResultResponseTime">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:fontFamily="@font/product_sans_regular"
+                android:gravity="start"
+                android:padding="@dimen/fifteenDp"
+                android:text="@string/questions_attempted"
+                android:textColor="@color/textColorMidBlack" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvResultAttempted"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end|center_vertical"
+                android:layout_margin="@dimen/fifteenDp"
+                android:fontFamily="@font/product_sans_bold"
+                android:text="@{result.totalAttempted+`\\`+result.attemptedQuestionList.size()}"
+                android:textColor="@android:color/holo_blue_light"
+                tools:text="2/3" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvResultTotalScore"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/fifteenDp"
+            app:layout_constraintTop_toBottomOf="@id/cvResultQuesAttempted">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:fontFamily="@font/product_sans_regular"
+                android:gravity="start"
+                android:padding="@dimen/fifteenDp"
+                android:text="@string/total_score"
+                android:textColor="@color/textColorMidBlack" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvResultTotalScore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end|center_vertical"
+                android:layout_margin="@dimen/fifteenDp"
+                android:fontFamily="@font/product_sans_bold"
+                android:text="@{String.valueOf(result.totalScore)}"
+                android:textColor="@android:color/holo_purple"
+                tools:text="21" />
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

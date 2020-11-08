@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="transparent">#00FFFFFF</color>
+
+
+    <color name="appColor">#2196F3</color>
+    <color name="appSecondaryColor">#66AAE1</color>
+
+    <color name="appColorTransparent">#8F2196F3</color>
+
+    <color name="snackbar_error_background_color">#FF3333</color>
+    <color name="viewLine">#77969696</color>
+    //text color
+    <color name="textColorLightBlack">#969696</color>
+    <color name="textColorMidBlack">#434343</color>
+    <color name="textColorBlack">#FF000000</color>
+    <color name="textColorWhite">#FFFFFFFF</color>
+
+    //home screen
+    <color name="tabUnselectedColor">#969696</color>
+    <color name="tabSelectedColor">#2196F3</color>
+    <color name="green">#01EA0A</color>
+
+</resources>
